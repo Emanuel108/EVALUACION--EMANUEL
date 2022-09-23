@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Clientes";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4>Clientes</h4>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>No. de cliente</th>
+                            <th>Nombre</th>
+                            <th>Apellido paterno</th>
+                            <th>Apellido materno</th>
+                            <th>Domicilio</th>
+                            <th>Creado en</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in ViewBag.Clients)
+                    {
+                        <tr>
+                            <th scope="row">@item.NoCliente</th>
+                            <td>@item.Nombre</td>
+                            <td>@item.ApellidoPaterno</td>
+                            <td>@item.ApellidoMaterno</td>
+                            <td>@item.Domicilio</td>
+                            <td>@item.CreatedAt</td>
+                            <td><a class="btn btn-sm btn-primary" asp-action="Detail" asp-route-id="@item.Id"><i class="bi bi-eye-fill"></i></a></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

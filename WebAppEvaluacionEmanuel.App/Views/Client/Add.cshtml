@@ -1,0 +1,35 @@
+﻿@using WebAppEvaluacionEmanuel.Data.Models
+@model Cliente
+@{
+    ViewData["Title"] = "Crear nuevo cliente";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4>Crear cliente</h4>
+                <form class="row g-3" method="post" asp-action="Add">
+                    <div class="col-12">
+                        <label asp-for="Nombre" class="form-label">Nombre</label>
+                        <input asp-for="Nombre" type="text" class="form-control" placeholder="Nombre(s)" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="ApellidoPaterno" class="form-label">Apellido paterno</label>
+                        <input asp-for="ApellidoPaterno" type="text" class="form-control" placeholder="Apellido paterno" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="ApellidoMaterno" class="form-label">Apellido materno</label>
+                        <input asp-for="ApellidoMaterno" type="text" class="form-control" placeholder="Apellido materno" required>
+                    </div>
+                    <div class="col-12">
+                        <label asp-for="Domicilio" class="form-label">Domicilio</label>
+                        <input asp-for="Domicilio" type="text" class="form-control" placeholder="Calle, colonia, ciudad" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary"><i class="fa-thin fa-circle-plus"></i> Crear cliente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
